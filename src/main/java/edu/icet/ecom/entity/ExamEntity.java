@@ -1,5 +1,6 @@
-package edu.icet.ecom.dto;
+package edu.icet.ecom.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Exam {
+@Table
+@Entity(name="exam")
+public class ExamEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String examName;
     private String description;
